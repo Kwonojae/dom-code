@@ -23,7 +23,7 @@
       }
       img {
         z-index: 100;
-        will-change: opacity;
+        will-change: opacity ;
       }
       h1,
       h3,
@@ -34,10 +34,43 @@
   </head>
   <body>
     <section>
+      <img src="img/people.png" alt="avatar" />
       <img src="img/avatar.png" alt="avatar" />
       <h1 id="brand">Dream Coding</h1>
+      <!-- Hello comment  -->
       <h3>Don't forget to code your dream</h3>
     </section>
     <span>Hello World!</span>
+    <script>
+      //다양한 Selector를 이용해서 요소들을 DOM의 요소들을 받아올수있따 
+      //DOM요소는 Element이다
+      
+      //section받아옴
+      const section = document.querySelector('section');
+      
+      //createElement 태그추가 
+      //Element의 변수를 가지고 있으면서 조금더 많은 동작을 해야된다면 사용하는것도 좋음
+      const h2 = document.createElement('h2');
+
+      //setAttribute key 와 value를 전달하면 속성이설정가능
+      h2.setAttribute('class', 'title');  //<h2 class="title"></h2>
+      h2.textContent = 'This is a title'; //<h2 class="title">This is a title</h2>
+      
+      //insertBefore: 새로 추가하고싶은 것을 앞에 쓴다 h3 이전에 추가됨
+      const h3 = document.querySelector('h3');
+      section.insertBefore(h2, h3);
+
+      //컨테이너(section) 제일끝부분에 추가됨
+      // section.appendChild(h2);
+      
+      //지우기
+      //section.removeChild(h2);
+      
+      // section.innerHTML =`
+      //   <img src="img/avatar.png" alt="avatar" />
+      //   <h1 id="brand">Dream Coding</h1>
+      // `;  한번 업데이트 한다음에 다시는 변경할일이 없으면 이거 써도 괜찮
+      
+    </script>
   </body>
 </html>
